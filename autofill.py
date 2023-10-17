@@ -1,6 +1,6 @@
 from selenium import webdriver
 web = webdriver.Chrome()
-web.get('https://imigresen-online.imi.gov.my/mdac/main')
+web.get('https://imigresen-online.imi.gov.my/mdac/main?registerMain')
 
 # Run into page crash issue:
 
