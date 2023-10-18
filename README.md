@@ -1,5 +1,19 @@
-# Video demo
+# Use Chrome Exntension to update MDAC
+Enter in Chrome address bar `chrome://extensions/`
 
+Enable developer mode
+
+Click `Load unpacked` and select chrome-autofill-mdac-extension folder found in this repository
+
+Use Chrome to browse https://imigresen-online.imi.gov.my/mdac/main?registerMain
+
+You would see the form is automatically filled up.
+
+To change the form values to yours, modify chrome-autofill-mdac-extension/scripts/content.js
+
+Read https://developer.chrome.com/docs/extensions/mv3/getstarted/tut-reading-time/ to understand how content.js inject values to the form.
+
+# Video demo for using devtools to update MDAC
 
 https://github.com/hunglun/autofill-mdac-form/assets/343395/e2767893-eb83-46b8-b353-d242dbbf7cdf
 
