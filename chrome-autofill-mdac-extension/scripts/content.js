@@ -1,3 +1,9 @@
+const today = new Date();
+const departureDate = new Date();
+departureDate.setDate(today.getDate() + 30); // Add 30 days to the current date
+const todayFormattedDate = ('0' + today.getDate()).slice(-2) + '/' + ('0' + (today.getMonth() + 1)).slice(-2) + '/' + today.getFullYear();
+const departureFormattedDate = ('0' + departureDate.getDate()).slice(-2) + '/' + ('0' + (departureDate.getMonth() + 1)).slice(-2) + '/' + departureDate.getFullYear();
+
 document.getElementById("nationality").selectedIndex = "212";
 document.getElementById("passNo").value = "M1230123K";
 document.getElementById("name").value = "Charlie";
@@ -11,5 +17,5 @@ document.getElementById("confirmRegion").value = "+65";
 document.getElementById("confirmMobile").value = "12341234";
 document.getElementById("trvlMode").value = "2";
 document.getElementById("passExpDte").value = "01/11/2030";
-document.getElementById("arrDt").value = "18/10/2023";
-document.getElementById("depDt").value = "17/11/2023";
+document.getElementById("arrDt").value = todayFormattedDate;
+document.getElementById("depDt").value = departureFormattedDate;
