@@ -11,13 +11,14 @@ const saveOptions = () => {
   const passExpDte = document.getElementById('passExpDte').value;
   const sex = document.getElementById('sex').value;
   const nationality = document.getElementById('nationality').value;
-
+  const trvlMode = document.getElementById('trvlMode').value;
   chrome.storage.sync.set(
     {
       favoriteColor: color, likesColor: likesColor, name: name,
       passNo: passNo, dob: dob, email: email, region: region, mobile: mobile, passExpDte: passExpDte,
       sex : sex,
-      nationality: nationality
+      nationality: nationality,
+      trvlMode : trvlMode
     },
     () => {
       // Update status to let user know options were saved.
@@ -43,7 +44,8 @@ const restoreOptions = () => {
       mobile: "12341234",
       passExpDte: "01/11/2030",
       sex : "1",
-      nationality : "212"
+      nationality : "212",
+      trvlMode : "2"
     },
     (items) => {
       document.getElementById('color').value = items.favoriteColor;
@@ -60,6 +62,7 @@ const restoreOptions = () => {
       document.getElementById('passExpDte').value = items.passExpDte;
       document.getElementById('sex').value = items.sex;
       document.getElementById('nationality').value = items.nationality;
+      document.getElementById('trvlMode').value = items.trvlMode;
     }
   );
 };

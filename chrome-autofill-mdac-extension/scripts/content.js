@@ -8,7 +8,8 @@ const formData = {
   mobile: "12341234",
   passExpDte: "01/11/2030",
   sex: "1",
-  nationality : "212"
+  nationality : "212",
+  trvlMode : "2"
 };
 
 const restoreOptions = () => {
@@ -25,6 +26,8 @@ const restoreOptions = () => {
     document.getElementById('passExpDte').value = items.passExpDte;
     document.getElementById('sex').value = items.sex;
     document.getElementById('nationality').selectedIndex = items.nationality;
+    document.getElementById('trvlMode').selectedIndex = items.trvlMode;
+    
   });
 };
 
