@@ -9,11 +9,13 @@ const saveOptions = () => {
   const region = document.getElementById('region').value;
   const mobile = document.getElementById('mobile').value;
   const passExpDte = document.getElementById('passExpDte').value;
+  const sex = document.getElementById('sex').value;
 
   chrome.storage.sync.set(
     {
       favoriteColor: color, likesColor: likesColor, name: name,
-      passNo: passNo, dob: dob, email: email, region: region, mobile: mobile, passExpDte: passExpDte
+      passNo: passNo, dob: dob, email: email, region: region, mobile: mobile, passExpDte: passExpDte,
+      sex : sex
     },
     () => {
       // Update status to let user know options were saved.
@@ -37,7 +39,8 @@ const restoreOptions = () => {
       email: "abc@mail.com",
       region: "+65",
       mobile: "12341234",
-      passExpDte: "01/11/2030"
+      passExpDte: "01/11/2030",
+      sex : "1"
     },
     (items) => {
       document.getElementById('color').value = items.favoriteColor;
@@ -52,6 +55,7 @@ const restoreOptions = () => {
       document.getElementById('mobile').value = items.mobile;
       // document.getElementById('confirmMobile').value = items.mobile;
       document.getElementById('passExpDte').value = items.passExpDte;
+      document.getElementById('sex').value = items.sex;
     }
   );
 };
