@@ -9,9 +9,7 @@ Use Chrome to browse https://imigresen-online.imi.gov.my/mdac/main?registerMain
 
 You would see the form is automatically filled up.
 
-To change the form values to yours, modify chrome-autofill-mdac-extension/scripts/content.js
-
-Read https://developer.chrome.com/docs/extensions/mv3/getstarted/tut-reading-time/ to understand how content.js inject values to the form.
+To change the form values to yours, right click the extension and select 'options'.
 
 # Video demo for using devtools to update MDAC
 
