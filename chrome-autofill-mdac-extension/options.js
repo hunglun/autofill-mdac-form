@@ -10,12 +10,14 @@ const saveOptions = () => {
   const mobile = document.getElementById('mobile').value;
   const passExpDte = document.getElementById('passExpDte').value;
   const sex = document.getElementById('sex').value;
+  const nationality = document.getElementById('nationality').value;
 
   chrome.storage.sync.set(
     {
       favoriteColor: color, likesColor: likesColor, name: name,
       passNo: passNo, dob: dob, email: email, region: region, mobile: mobile, passExpDte: passExpDte,
-      sex : sex
+      sex : sex,
+      nationality: nationality
     },
     () => {
       // Update status to let user know options were saved.
@@ -40,7 +42,8 @@ const restoreOptions = () => {
       region: "+65",
       mobile: "12341234",
       passExpDte: "01/11/2030",
-      sex : "1"
+      sex : "1",
+      nationality : "212"
     },
     (items) => {
       document.getElementById('color').value = items.favoriteColor;
@@ -56,6 +59,7 @@ const restoreOptions = () => {
       // document.getElementById('confirmMobile').value = items.mobile;
       document.getElementById('passExpDte').value = items.passExpDte;
       document.getElementById('sex').value = items.sex;
+      document.getElementById('nationality').value = items.nationality;
     }
   );
 };

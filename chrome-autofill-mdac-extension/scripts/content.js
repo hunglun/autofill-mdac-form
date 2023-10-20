@@ -7,7 +7,8 @@ const formData = {
   region: "+65",
   mobile: "12341234",
   passExpDte: "01/11/2030",
-  sex: "1"
+  sex: "1",
+  nationality : "212"
 };
 
 const restoreOptions = () => {
@@ -23,6 +24,7 @@ const restoreOptions = () => {
     document.getElementById('confirmMobile').value = items.mobile;
     document.getElementById('passExpDte').value = items.passExpDte;
     document.getElementById('sex').value = items.sex;
+    document.getElementById('nationality').selectedIndex = items.nationality;
   });
 };
 
