@@ -1,35 +1,9 @@
-const formData = {
-  nationality: "",
-  passNo: "",
-  name: "",
-  sex: "",
-  dob: "",
-  email: "",
-  confirmEmail: "",
-  region: "",
-  mobile: "",
-  confirmRegion: "",
-  confirmMobile: "",
-  trvlMode: "",
-  passExpDte: "",
-  arrDt: "",
-  depDt: ""
-};
+const formData =   { favoriteColor: 'red', likesColor: true, 
+name : "bob" };
+
 const restoreOptions = () => {
   chrome.storage.sync.get(formData, (items) => {
-    document.getElementById('nationality').value = items.nationality || "";
-    document.getElementById('passNo').value = items.passNo || "";
-    document.getElementById('name').value = items.name || "";
-    document.getElementById('sex').value = items.sex || "";
-    document.getElementById('dob').value = items.dob || "";
-    document.getElementById('email').value = items.email || "";
-    document.getElementById('confirmEmail').value = items.email || "";
-    document.getElementById('region').value = items.region || "";
-    document.getElementById('mobile').value = items.mobile || "";
-    document.getElementById('confirmRegion').value = items.region || "";
-    document.getElementById('confirmMobile').value = items.mobile || "";
-    document.getElementById('trvlMode').value = items.trvlMode || "";
-    document.getElementById('passExpDte').value = items.passExpDte || "";
+    document.getElementById('name').value = items.name ;
   });
 };
 
