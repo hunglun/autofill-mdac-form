@@ -1,5 +1,4 @@
 const formData = {
-  favoriteColor: 'red', likesColor: true,
   name: "bob",
   passNo: "M1230123K",
   dob: "01/08/1991",

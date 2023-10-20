@@ -1,7 +1,5 @@
 // Saves options to chrome.storage
 const saveOptions = () => {
-  const color = document.getElementById('color').value;
-  const likesColor = document.getElementById('like').checked;
   const name = document.getElementById('name').value;
   const passNo = document.getElementById('passNo').value;
   const dob = document.getElementById('dob').value;
@@ -14,7 +12,7 @@ const saveOptions = () => {
   const trvlMode = document.getElementById('trvlMode').value;
   chrome.storage.sync.set(
     {
-      favoriteColor: color, likesColor: likesColor, name: name,
+      name: name,
       passNo: passNo, dob: dob, email: email, region: region, mobile: mobile, passExpDte: passExpDte,
       sex : sex,
       nationality: nationality,
@@ -36,7 +34,7 @@ const saveOptions = () => {
 const restoreOptions = () => {
   chrome.storage.sync.get(
     {
-      favoriteColor: 'red', likesColor: true, name: "Bob",
+      name: "Bob",
       passNo: "M1230123K",
       dob: "01/08/1991",
       email: "abc@mail.com",
@@ -48,8 +46,6 @@ const restoreOptions = () => {
       trvlMode : "2"
     },
     (items) => {
-      document.getElementById('color').value = items.favoriteColor;
-      document.getElementById('like').checked = items.likesColor;
       document.getElementById('name').value = items.name;
       document.getElementById('passNo').value = items.passNo;
       document.getElementById('dob').value = items.dob;
