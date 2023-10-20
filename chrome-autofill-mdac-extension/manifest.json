@@ -8,5 +8,9 @@
             "matches": ["https://imigresen-online.imi.gov.my/mdac/main?registerMain"],
             "js": ["scripts/content.js"]
         }
+    ],
+    "options_page": "options.html",
+    "permissions": [
+        "storage"
     ]
 }
