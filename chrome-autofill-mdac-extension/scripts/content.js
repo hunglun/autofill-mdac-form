@@ -1,9 +1,26 @@
-const formData =   { favoriteColor: 'red', likesColor: true, 
-name : "bob" };
+const formData = {
+  favoriteColor: 'red', likesColor: true,
+  name: "bob",
+  passNo: "M1230123K",
+  dob: "01/08/1991",
+  email: "abc@mail.com",
+  region: "+65",
+  mobile: "12341234",
+  passExpDte: "01/11/2030"
+};
 
 const restoreOptions = () => {
   chrome.storage.sync.get(formData, (items) => {
-    document.getElementById('name').value = items.name ;
+    document.getElementById('name').value = items.name;
+    document.getElementById('passNo').value = items.passNo;
+    document.getElementById('dob').value = items.dob;
+    document.getElementById('email').value = items.email;
+    document.getElementById('confirmEmail').value = items.email;
+    document.getElementById('region').value = items.region;
+    document.getElementById('confirmRegion').value = items.region;
+    document.getElementById('mobile').value = items.mobile;
+    document.getElementById('confirmMobile').value = items.mobile;
+    document.getElementById('passExpDte').value = items.passExpDte;
   });
 };
 
