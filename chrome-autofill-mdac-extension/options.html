@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Test Extension Options</title>
-  </head>
-  <body>
-    <select id="color">
-      <option value="red">red</option>
-      <option value="green">green</option>
-      <option value="blue">blue</option>
-      <option value="yellow">yellow</option>
-    </select>
 
-    <label>
-      <input type="checkbox" id="like" />
-      I like colors.
-    </label>
+<head>
+  <title>My Test Extension Options</title>
+</head>
 
-    <div id="status"></div>
-    <button id="save">Save</button>
+<body>
+  <select id="color">
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+    <option value="yellow">yellow</option>
+  </select>
 
-    <script src="options.js"></script>
-  </body>
+  <label>
+    <input type="checkbox" id="like" />
+    I like colors.
+  </label>
+  <ul>
+    <li>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" />
+    </li>
+    <li>
+        <label for="passNo">Passport Number:</label>
+        <input type="text" id="passNo" />
+    </li>
+    <li>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+    </li>
+    <li>
+        <label for="sex">Sex:</label>
+        <input type="text" id="sex" />
+    </li>
+    <li>
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" />
+    </li>
+    <li>
+        <label for="email">Email:</label>
+        <input type="text" id="email" />
+    </li>
+
+    <li>
+        <label for="region">Region Code:</label>
+        <input type="text" id="region" />
+    </li>
+    <li>
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" />
+    </li>
+    <li>
+        <label for="trvlMode">Travel Mode:</label>
+        <input type="text" id="trvlMode" />
+    </li>
+    <li>
+        <label for="passExpDte">Passport Expiry Date:</label>
+        <input type="text" id="passExpDte" />
+    </li>
+</ul>
+
+
+<div id="status"></div>
+  <button id="save">Save</button>
+
+  <script src="options.js"></script>
+</body>
+
 </html>

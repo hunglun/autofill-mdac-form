@@ -1,3 +1,38 @@
+const formData = {
+  nationality: "",
+  passNo: "",
+  name: "",
+  sex: "",
+  dob: "",
+  email: "",
+  confirmEmail: "",
+  region: "",
+  mobile: "",
+  confirmRegion: "",
+  confirmMobile: "",
+  trvlMode: "",
+  passExpDte: "",
+  arrDt: "",
+  depDt: ""
+};
+const restoreOptions = () => {
+  chrome.storage.sync.get(formData, (items) => {
+    document.getElementById('nationality').value = items.nationality || "";
+    document.getElementById('passNo').value = items.passNo || "";
+    document.getElementById('name').value = items.name || "";
+    document.getElementById('sex').value = items.sex || "";
+    document.getElementById('dob').value = items.dob || "";
+    document.getElementById('email').value = items.email || "";
+    document.getElementById('confirmEmail').value = items.email || "";
+    document.getElementById('region').value = items.region || "";
+    document.getElementById('mobile').value = items.mobile || "";
+    document.getElementById('confirmRegion').value = items.region || "";
+    document.getElementById('confirmMobile').value = items.mobile || "";
+    document.getElementById('trvlMode').value = items.trvlMode || "";
+    document.getElementById('passExpDte').value = items.passExpDte || "";
+  });
+};
+
 const today = new Date();
 const departureDate = new Date();
 departureDate.setDate(today.getDate() + 30); // Add 30 days to the current date
@@ -19,3 +54,5 @@ document.getElementById("trvlMode").value = "2";
 document.getElementById("passExpDte").value = "01/11/2030";
 document.getElementById("arrDt").value = todayFormattedDate;
 document.getElementById("depDt").value = departureFormattedDate;
+
+restoreOptions();
