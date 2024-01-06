@@ -42,4 +42,15 @@ thirty_days_later = (datetime.now() + timedelta(days=30)).strftime('%d/%m/%Y')
 js_code += f'document.getElementById("arrDt").value = "{today}";\n'
 js_code += f'document.getElementById("depDt").value = "{thirty_days_later}";\n'
 
+js_code += f'document.getElementById("accommodationStay").selectedIndex = "3";\n'
+js_code += f'document.getElementById("accommodationAddress1").value = "Legoland House 1A";\n'
+js_code += f'document.getElementById("accommodationState").selectedIndex = "1";\n'
+js_code += f'document.getElementById("accommodationCity").selectedIndex = "1";\n'
+js_code += f'document.getElementById("accommodationPostcode").value = "70123";\n'
+
+
+
+
+
+
 print(js_code)
