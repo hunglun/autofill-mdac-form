@@ -10,13 +10,24 @@ const saveOptions = () => {
   const sex = document.getElementById('sex').value;
   const nationality = document.getElementById('nationality').value;
   const trvlMode = document.getElementById('trvlMode').value;
+
+  const accommodationStay = document.getElementById("accommodationStay").selectedIndex; 
+  const accommodationAddress1 = document.getElementById("accommodationAddress1").value;
+  const accommodationState = document.getElementById("accommodationState").selectedIndex; 
+  const accommodationCity = document.getElementById("accommodationCity").selectedIndex; 
+  const accommodationPostcode = document.getElementById("accommodationPostcode").value;
   chrome.storage.sync.set(
     {
       name: name,
       passNo: passNo, dob: dob, email: email, region: region, mobile: mobile, passExpDte: passExpDte,
       sex : sex,
       nationality: nationality,
-      trvlMode : trvlMode
+      trvlMode : trvlMode,
+      accommodationStay : accommodationStay,
+      accommodationAddress1 : accommodationAddress1,
+      accommodationState : accommodationState,
+      accommodationCity: accommodationCity,
+      accommodationPostcode: accommodationPostcode
     },
     () => {
       // Update status to let user know options were saved.
@@ -43,7 +54,12 @@ const restoreOptions = () => {
       passExpDte: "01/11/2030",
       sex : "1",
       nationality : "212",
-      trvlMode : "2"
+      trvlMode : "2",
+      accommodationStay : "3",
+      accommodationAddress1 : "Legoland House 1A",
+      accommodationState : "1",
+      accommodationCity: "1",
+      accommodationPostcode: "00000"
     },
     (items) => {
       document.getElementById('name').value = items.name;
@@ -59,6 +75,14 @@ const restoreOptions = () => {
       document.getElementById('sex').value = items.sex;
       document.getElementById('nationality').value = items.nationality;
       document.getElementById('trvlMode').value = items.trvlMode;
+
+      // new fields in 2024
+      document.getElementById("accommodationStay").selectedIndex = items.accommodationStay;
+      document.getElementById("accommodationAddress1").value = items.accommodationAddress1;
+      document.getElementById("accommodationState").selectedIndex = items.accommodationState;
+      document.getElementById("accommodationCity").selectedIndex = items.accommodationCity;
+      document.getElementById("accommodationPostcode").value = items.accommodationPostcode;
+      
     }
   );
 };

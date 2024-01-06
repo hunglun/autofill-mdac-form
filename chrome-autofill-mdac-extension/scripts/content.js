@@ -8,7 +8,12 @@ const formData = {
   passExpDte: "01/11/2030",
   sex: "1",
   nationality : "212",
-  trvlMode : "2"
+  trvlMode : "2",
+  accommodationStay : "3",
+  accommodationAddress1 : "Legoland House 1A",
+  accommodationState : "1",
+  accommodationCity: "1",
+  accommodationPostcode: "00000"
 };
 
 const restoreOptions = () => {
@@ -26,7 +31,12 @@ const restoreOptions = () => {
     document.getElementById('sex').value = items.sex;
     document.getElementById('nationality').selectedIndex = items.nationality;
     document.getElementById('trvlMode').selectedIndex = items.trvlMode;
-    
+    document.getElementById("accommodationStay").selectedIndex = items.accommodationStay;
+    document.getElementById("accommodationAddress1").value = items.accommodationAddress1;
+    document.getElementById("accommodationState").selectedIndex = items.accommodationState;
+    document.getElementById("accommodationCity").selectedIndex = items.accommodationCity;
+    document.getElementById("accommodationPostcode").value = items.accommodationPostcode;
+        
   });
 };
 
