@@ -45,8 +45,15 @@ js_code += f'document.getElementById("depDt").value = "{thirty_days_later}";\n'
 js_code += f'document.getElementById("accommodationStay").selectedIndex = "3";\n'
 js_code += f'document.getElementById("accommodationAddress1").value = "Legoland House 1A";\n'
 js_code += f'document.getElementById("accommodationState").selectedIndex = "1";\n'
-js_code += f'document.getElementById("accommodationCity").selectedIndex = "1";\n'
+js_code += f'var state=document.getElementById("accommodationState");\n'
+js_code += f'var evt = document.createEvent("HTMLEvents");\n'
+js_code += f'evt.initEvent("change", false, true);\n'
+js_code += f'state.dispatchEvent(evt);\n'
+
 js_code += f'document.getElementById("accommodationPostcode").value = "70123";\n'
+js_code += f'document.getElementById("accommodationCity").selectedIndex = "1";\n'
+js_code += f'var city=document.getElementById("accommodationCity");\n'
+js_code += f'city.dispatchEvent(evt);\n'
 
 
 
