@@ -52,8 +52,7 @@ js_code += f'state.dispatchEvent(evt);\n'
 
 js_code += f'document.getElementById("accommodationPostcode").value = "70123";\n'
 js_code += f'document.getElementById("accommodationCity").selectedIndex = "1";\n'
-js_code += f'var city=document.getElementById("accommodationCity");\n'
-js_code += f'city.dispatchEvent(evt);\n'
+
 
 
 

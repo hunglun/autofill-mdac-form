@@ -33,8 +33,14 @@ const restoreOptions = () => {
     document.getElementById('trvlMode').selectedIndex = items.trvlMode;
     document.getElementById("accommodationStay").selectedIndex = items.accommodationStay;
     document.getElementById("accommodationAddress1").value = items.accommodationAddress1;
-    document.getElementById("accommodationState").selectedIndex = items.accommodationState;
-    document.getElementById("accommodationCity").selectedIndex = items.accommodationCity;
+    
+    var state=document.getElementById("accommodationState");
+    state.selectedIndex = "1"  //BUG fix bug items.state;
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent("change", false, true);
+    state.dispatchEvent(evt);
+
+    document.getElementById("accommodationCity").selectedIndex = "1";
     document.getElementById("accommodationPostcode").value = items.accommodationPostcode;
         
   });
