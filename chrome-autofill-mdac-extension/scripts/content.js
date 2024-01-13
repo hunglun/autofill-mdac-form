@@ -36,8 +36,7 @@ const restoreOptions = () => {
     
     var state=document.getElementById("accommodationState");
     state.selectedIndex = "1"  //BUG fix bug items.state;
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("change", false, true);
+    const evt = new Event("change", { bubbles: true, cancelable: false });
     state.dispatchEvent(evt);
 
     document.getElementById("accommodationCity").selectedIndex = "1";
