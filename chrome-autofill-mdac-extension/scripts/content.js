@@ -34,12 +34,29 @@ const restoreOptions = () => {
     document.getElementById("accommodationStay").selectedIndex = items.accommodationStay;
     document.getElementById("accommodationAddress1").value = items.accommodationAddress1;
     
-    var state=document.getElementById("accommodationState");
-    state.selectedIndex = "1"  //BUG fix bug items.state;
+    var state = document.getElementById("accommodationState");
+    var city = document.getElementById("accommodationCity");
+
+    // Define the function to handle the change event of the state
+    function handleStateChange(event) {
+        // Assuming some mechanism here to populate the city dropdown based on the state
+        // You might need to call a function here that loads the city options based on the state
+
+        // Set a small delay to allow city options to load
+        setTimeout(() => {
+            city.selectedIndex = "1";  // Select the first city
+        }, 500); // Adjust the timeout duration as per the loading time of city options
+    }
+
+    // Attach the event listener to the 'state' element
+    state.addEventListener("change", handleStateChange);
+
+    // Trigger the state change programmatically to load cities
+    state.selectedIndex = "1";
     const evt = new Event("change", { bubbles: true, cancelable: false });
     state.dispatchEvent(evt);
 
-    document.getElementById("accommodationCity").selectedIndex = "1";
+
     document.getElementById("accommodationPostcode").value = items.accommodationPostcode;
         
   });
