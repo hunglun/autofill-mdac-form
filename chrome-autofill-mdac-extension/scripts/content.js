@@ -14,6 +14,8 @@ const formData = {
   accommodationState : "1",
   accommodationCity: "1",
   accommodationPostcode: "00000",
+  city: "1",
+  state: "1",
   embark: "212"
 };
 
@@ -46,7 +48,7 @@ const restoreOptions = () => {
 
         // Set a small delay to allow city options to load
         setTimeout(() => {
-            city.selectedIndex = "1";  // Select the first city
+            city.selectedIndex = items.city;  // Select the first city
         }, 500); // Adjust the timeout duration as per the loading time of city options
     }
 
@@ -54,7 +56,7 @@ const restoreOptions = () => {
     state.addEventListener("change", handleStateChange);
 
     // Trigger the state change programmatically to load cities
-    state.selectedIndex = "1";
+    state.selectedIndex = items.state;
     const evt = new Event("change", { bubbles: true, cancelable: false });
     state.dispatchEvent(evt);
 
@@ -70,10 +72,6 @@ departureDate.setDate(today.getDate() + 30); // Add 30 days to the current date
 const todayFormattedDate = ('0' + today.getDate()).slice(-2) + '/' + ('0' + (today.getMonth() + 1)).slice(-2) + '/' + today.getFullYear();
 const departureFormattedDate = ('0' + departureDate.getDate()).slice(-2) + '/' + ('0' + (departureDate.getMonth() + 1)).slice(-2) + '/' + departureDate.getFullYear();
 
-// document.getElementById("embark").selectedIndex = "212";
-// document.getElementById("nationality").selectedIndex = "212";
-// document.getElementById("sex").value = "1";
-// document.getElementById("trvlMode").value = "2";
 document.getElementById("arrDt").value = todayFormattedDate;
 document.getElementById("depDt").value = departureFormattedDate;
 

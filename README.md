@@ -42,5 +42,3 @@ The autofill app browses to the simple test form on localhost and populates pred
 
 # Second Test
 Autofill MDAC form. 
-
-# Task 3 fix bug
