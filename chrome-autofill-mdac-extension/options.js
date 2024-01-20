@@ -14,6 +14,7 @@ const saveOptions = () => {
   const accommodationStay = document.getElementById("accommodationStay").selectedIndex; 
   const accommodationAddress1 = document.getElementById("accommodationAddress1").value;
   const accommodationState = document.getElementById("accommodationState").selectedIndex; 
+  const embark = document.getElementById("embark").value; 
   const accommodationCity = document.getElementById("accommodationCity").selectedIndex; 
   const accommodationPostcode = document.getElementById("accommodationPostcode").value;
   chrome.storage.sync.set(
@@ -27,7 +28,8 @@ const saveOptions = () => {
       accommodationAddress1 : accommodationAddress1,
       accommodationState : accommodationState,
       accommodationCity: accommodationCity,
-      accommodationPostcode: accommodationPostcode
+      accommodationPostcode: accommodationPostcode,
+      embark: embark
     },
     () => {
       // Update status to let user know options were saved.
@@ -59,7 +61,8 @@ const restoreOptions = () => {
       accommodationAddress1 : "Legoland House 1A",
       accommodationState : "1",
       accommodationCity: "1",
-      accommodationPostcode: "00000"
+      accommodationPostcode: "00000",
+      embark: "212"
     },
     (items) => {
       document.getElementById('name').value = items.name;
@@ -82,6 +85,8 @@ const restoreOptions = () => {
       document.getElementById("accommodationState").selectedIndex = items.accommodationState;
       document.getElementById("accommodationCity").selectedIndex = items.accommodationCity;
       document.getElementById("accommodationPostcode").value = items.accommodationPostcode;
+      document.getElementById("embark").value = items.embark;
+      
       
     }
   );

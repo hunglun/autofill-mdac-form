@@ -17,7 +17,8 @@ fields = {
     "confirmRegion": "CONFIRM_REGION",
     "confirmMobile": "CONFIRM_MOBILE",
     "trvlMode": "TRVL_MODE",
-    "passExpDte": "PASSPORT_EXPIRY"
+    "passExpDte": "PASSPORT_EXPIRY",
+    "embark" : "EMBARK"
 }
 
 # Generate the JavaScript code
@@ -25,7 +26,7 @@ js_code = ""
 for element_id, env_var in fields.items():
     value = os.getenv(env_var)
     if value:  # Check if the .env variable exists
-        if env_var == "NATIONALITY":
+        if env_var in ["NATIONALITY", "EMBARK"]:
             js_code += f'document.getElementById("{element_id}").selectedIndex = "{value}";\n'
         else:
             js_code += f'document.getElementById("{element_id}").value = "{value}";\n'
@@ -52,6 +53,7 @@ js_code += f'state.dispatchEvent(evt);\n'
 
 js_code += f'document.getElementById("accommodationPostcode").value = "70123";\n'
 js_code += f'document.getElementById("accommodationCity").selectedIndex = "1";\n'
+js_code += f'document.getElementById("embark").selectedIndex = "212";\n'
 
 
 

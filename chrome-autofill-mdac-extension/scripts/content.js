@@ -13,7 +13,8 @@ const formData = {
   accommodationAddress1 : "Legoland House 1A",
   accommodationState : "1",
   accommodationCity: "1",
-  accommodationPostcode: "00000"
+  accommodationPostcode: "00000",
+  embark: "212"
 };
 
 const restoreOptions = () => {
@@ -33,6 +34,7 @@ const restoreOptions = () => {
     document.getElementById('trvlMode').selectedIndex = items.trvlMode;
     document.getElementById("accommodationStay").selectedIndex = items.accommodationStay;
     document.getElementById("accommodationAddress1").value = items.accommodationAddress1;
+    document.getElementById("embark").selectedIndex = items.embark;
     
     var state = document.getElementById("accommodationState");
     var city = document.getElementById("accommodationCity");
@@ -68,10 +70,12 @@ departureDate.setDate(today.getDate() + 30); // Add 30 days to the current date
 const todayFormattedDate = ('0' + today.getDate()).slice(-2) + '/' + ('0' + (today.getMonth() + 1)).slice(-2) + '/' + today.getFullYear();
 const departureFormattedDate = ('0' + departureDate.getDate()).slice(-2) + '/' + ('0' + (departureDate.getMonth() + 1)).slice(-2) + '/' + departureDate.getFullYear();
 
-document.getElementById("nationality").selectedIndex = "212";
-document.getElementById("sex").value = "1";
-document.getElementById("trvlMode").value = "2";
+// document.getElementById("embark").selectedIndex = "212";
+// document.getElementById("nationality").selectedIndex = "212";
+// document.getElementById("sex").value = "1";
+// document.getElementById("trvlMode").value = "2";
 document.getElementById("arrDt").value = todayFormattedDate;
 document.getElementById("depDt").value = departureFormattedDate;
 
-restoreOptions();
+
+ restoreOptions();

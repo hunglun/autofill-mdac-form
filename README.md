@@ -43,5 +43,4 @@ The autofill app browses to the simple test form on localhost and populates pred
 # Second Test
 Autofill MDAC form. 
 
-# Task 2 Add listener to set city 10 min
 # Task 3 fix bug
