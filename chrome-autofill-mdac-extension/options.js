@@ -169,6 +169,17 @@ const saveOptions = () => {
   }
 };
 
+default_options=  {name: "name",
+passNo: "passNo", dob: "dob", email: "email", region: "region", mobile: "mobile", passExpDte: "passExpDte",
+sex: "sex",
+nationality: "SINGAPORE",
+trvlMode: "LAND",
+accommodationStay: "accommodationStay",
+accommodationAddress1: "accommodationAddress1",
+accommodationState: "JOHORE",
+accommodationCity: "JOHORE",
+accommodationPostcode: "00000",
+embark: "SINGAPORE"}
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
@@ -177,15 +188,15 @@ const restoreOptions = () => {
   chrome.storage.sync.get(
     {
       "selectedProfile":2,
-      1:{},
-      2:{},
-      3:{},
-      4:{}
+      1:default_options,
+      2:default_options,
+      3:default_options,
+      4:default_options
     },
     (items) => {
      
       console.log("passport for profiles:", items[1].passNo, items[2].passNo)
-      for (let i = 1; i < 4; i++) {
+      for (let i = 1; i < 5; i++) {
         document.getElementById('name' + i).value = items[i].name;
         document.getElementById('passNo' + i).value = items[i].passNo;
         document.getElementById('dob' + i).value = items[i].dob;
