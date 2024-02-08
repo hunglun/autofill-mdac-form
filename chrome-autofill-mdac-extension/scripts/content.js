@@ -1,42 +1,33 @@
-const formData = {
-  name: "bob",
-  passNo: "M1230123K",
-  dob: "01/08/1991",
-  email: "abc@mail.com",
-  region: "+65",
-  mobile: "12341234",
-  passExpDte: "01/11/2030",
-  sex: "1",
-  nationality : "212",
-  trvlMode : "2",
-  accommodationStay : "3",
-  accommodationAddress1 : "Legoland House 1A",
-  accommodationState : "1",
-  accommodationCity: "1",
-  accommodationPostcode: "00000",
-  city: "1",
-  state: "1",
-  embark: "212"
+const formData =  {
+  "selectedProfile":2,
+  1:{},
+  2:{},
+  3:{},
+  4:{}
 };
 
 const restoreOptions = () => {
   chrome.storage.sync.get(formData, (items) => {
-    document.getElementById('name').value = items.name;
-    document.getElementById('passNo').value = items.passNo;
-    document.getElementById('dob').value = items.dob;
-    document.getElementById('email').value = items.email;
-    document.getElementById('confirmEmail').value = items.email;
-    document.getElementById('region').value = items.region;
-    document.getElementById('confirmRegion').value = items.region;
-    document.getElementById('mobile').value = items.mobile;
-    document.getElementById('confirmMobile').value = items.mobile;
-    document.getElementById('passExpDte').value = items.passExpDte;
-    document.getElementById('sex').value = items.sex;
-    document.getElementById('nationality').selectedIndex = items.nationality;
-    document.getElementById('trvlMode').selectedIndex = items.trvlMode;
-    document.getElementById("accommodationStay").selectedIndex = items.accommodationStay;
-    document.getElementById("accommodationAddress1").value = items.accommodationAddress1;
-    document.getElementById("embark").selectedIndex = items.embark;
+    console.log("items",items);
+    console.log("selected profile", items.selectedProfile);
+    var selectedProfile = items.selectedProfile;
+    console.log("name", items[selectedProfile].name);
+    document.getElementById('name').value = items[selectedProfile].name; //items[selectedProfile].name;
+    document.getElementById('passNo').value = items[selectedProfile].passNo;
+    document.getElementById('dob').value = items[selectedProfile].dob;
+    document.getElementById('email').value = items[selectedProfile].email;
+    document.getElementById('confirmEmail').value = items[selectedProfile].email;
+    document.getElementById('region').value = items[selectedProfile].region;
+    document.getElementById('confirmRegion').value = items[selectedProfile].region;
+    document.getElementById('mobile').value = items[selectedProfile].mobile;
+    document.getElementById('confirmMobile').value = items[selectedProfile].mobile;
+    document.getElementById('passExpDte').value = items[selectedProfile].passExpDte;
+    document.getElementById('sex').value = items[selectedProfile].sex;
+    document.getElementById('nationality').selectedIndex = items[selectedProfile].nationality;
+    document.getElementById('trvlMode').selectedIndex = items[selectedProfile].trvlMode;
+    document.getElementById("accommodationStay").selectedIndex = items[selectedProfile].accommodationStay;
+    document.getElementById("accommodationAddress1").value = items[selectedProfile].accommodationAddress1;
+    document.getElementById("embark").selectedIndex = items[selectedProfile].embark;
     
     var state = document.getElementById("accommodationState");
     var city = document.getElementById("accommodationCity");
@@ -48,7 +39,8 @@ const restoreOptions = () => {
 
         // Set a small delay to allow city options to load
         setTimeout(() => {
-            city.selectedIndex = items.city;  // Select the first city
+            console.log("setting city index to", items[selectedProfile].accommodationCity);
+            city.selectedIndex = items[selectedProfile].accommodationCity;  // Select the first city
         }, 500); // Adjust the timeout duration as per the loading time of city options
     }
 
@@ -56,12 +48,14 @@ const restoreOptions = () => {
     state.addEventListener("change", handleStateChange);
 
     // Trigger the state change programmatically to load cities
-    state.selectedIndex = items.state;
+
+    console.log("setting state index to", items[selectedProfile].accommodationState);
+    state.selectedIndex = items[selectedProfile].accommodationState;
     const evt = new Event("change", { bubbles: true, cancelable: false });
     state.dispatchEvent(evt);
 
 
-    document.getElementById("accommodationPostcode").value = items.accommodationPostcode;
+    document.getElementById("accommodationPostcode").value = items[selectedProfile].accommodationPostcode;
         
   });
 };
