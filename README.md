@@ -2,6 +2,9 @@
 Save and select from a list of profiles to populate the form.
 So, one can fill up the form not only for oneself, but also for parents and children.
 
+- [ ] extend options.html to include a drop list of profiles
+- [ ] extend the memory model
+- [ ] load selected profile to main webpage
 # Use Chrome Extension to update MDAC
 Enter in Chrome address bar `chrome://extensions/`
 
