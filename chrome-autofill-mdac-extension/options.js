@@ -169,13 +169,13 @@ const saveOptions = () => {
   }
 };
 
-default_options=  {name: "name",
-passNo: "passNo", dob: "dob", email: "email", region: "region", mobile: "mobile", passExpDte: "passExpDte",
-sex: "sex",
+default_options=  {name: "Alan",
+passNo: "K12312321Z", dob: "01/01/1999", email: "abc@gmail.com", region: "+65", mobile: "91234343", passExpDte: "01/01/2030",
+sex: "MALE",
 nationality: "SINGAPORE",
 trvlMode: "LAND",
-accommodationStay: "accommodationStay",
-accommodationAddress1: "accommodationAddress1",
+accommodationStay: "others",
+accommodationAddress1: "1 Medini #01-01",
 accommodationState: "JOHORE",
 accommodationCity: "JOHORE",
 accommodationPostcode: "00000",
