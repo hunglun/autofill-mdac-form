@@ -1,4 +1,8 @@
-# Use Chrome Exntension to update MDAC
+# TODO Multi Profile Options [ 3 days ]
+Save and select from a list of profiles to populate the form.
+So, one can fill up the form not only for oneself, but also for parents and children.
+
+# Use Chrome Extension to update MDAC
 Enter in Chrome address bar `chrome://extensions/`
 
 Enable developer mode
