@@ -1,12 +1,16 @@
 {
-    "manifest_version":3,
-    "name" : "Autofill MDAC",
-    "description":"Autofill Malaysia Digital Arrival Card",
-    "version": "2.0",
+    "manifest_version": 3,
+    "name": "Autofill MDAC",
+    "description": "Autofill Malaysia Digital Arrival Card",
+    "version": "2.1",
     "content_scripts": [
         {
-            "matches": ["https://imigresen-online.imi.gov.my/mdac/main?registerMain"],
-            "js": ["scripts/content.js"]
+            "matches": [
+                "https://imigresen-online.imi.gov.my/mdac/main?registerMain"
+            ],
+            "js": [
+                "scripts/content.js"
+            ]
         }
     ],
     "options_page": "options.html",
@@ -16,7 +20,6 @@
     "icons": {
         "16": "icons/16x16.png",
         "48": "icons/48x48.png",
-        "128":"icons/128x128.png"
-     }
-     
+        "128": "icons/128x128.png"
+    }
 }
