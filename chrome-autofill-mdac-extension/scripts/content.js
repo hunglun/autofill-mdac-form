@@ -1,14 +1,14 @@
-const formData =  {
-  "selectedProfile":2,
-  1:{},
-  2:{},
-  3:{},
-  4:{}
+const formData = {
+  "selectedProfile": 2,
+  1: {},
+  2: {},
+  3: {},
+  4: {}
 };
 
 const restoreOptions = () => {
   chrome.storage.sync.get(formData, (items) => {
-    console.log("items",items);
+    console.log("items", items);
     console.log("selected profile", items.selectedProfile);
     var selectedProfile = items.selectedProfile;
     console.log("name", items[selectedProfile].name);
@@ -28,20 +28,22 @@ const restoreOptions = () => {
     document.getElementById("accommodationStay").selectedIndex = items[selectedProfile].accommodationStay;
     document.getElementById("accommodationAddress1").value = items[selectedProfile].accommodationAddress1;
     document.getElementById("embark").selectedIndex = items[selectedProfile].embark;
-    
+    document.getElementById("vesselNm").value = "NA";
+
+
     var state = document.getElementById("accommodationState");
     var city = document.getElementById("accommodationCity");
 
     // Define the function to handle the change event of the state
     function handleStateChange(event) {
-        // Assuming some mechanism here to populate the city dropdown based on the state
-        // You might need to call a function here that loads the city options based on the state
+      // Assuming some mechanism here to populate the city dropdown based on the state
+      // You might need to call a function here that loads the city options based on the state
 
-        // Set a small delay to allow city options to load
-        setTimeout(() => {
-            console.log("setting city index to", items[selectedProfile].accommodationCity);
-            city.selectedIndex = items[selectedProfile].accommodationCity;  // Select the first city
-        }, 500); // Adjust the timeout duration as per the loading time of city options
+      // Set a small delay to allow city options to load
+      setTimeout(() => {
+        console.log("setting city index to", items[selectedProfile].accommodationCity);
+        city.selectedIndex = items[selectedProfile].accommodationCity;  // Select the first city
+      }, 500); // Adjust the timeout duration as per the loading time of city options
     }
 
     // Attach the event listener to the 'state' element
@@ -56,7 +58,7 @@ const restoreOptions = () => {
 
 
     document.getElementById("accommodationPostcode").value = items[selectedProfile].accommodationPostcode;
-        
+
   });
 };
 
@@ -70,4 +72,4 @@ document.getElementById("arrDt").value = todayFormattedDate;
 document.getElementById("depDt").value = departureFormattedDate;
 
 
- restoreOptions();
+restoreOptions();
