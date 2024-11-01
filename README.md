@@ -1,3 +1,9 @@
+# 1 Nov 2024 Update new options and their values 
+
+# How to load the unpacked chrome extension?
+See https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
+
+
 # DONE Multi Profile Options [ 3 days -> 2 days ]
 Save and select from a list of profiles to populate the form.
 So, one can fill up the form not only for oneself, but also for parents and children.
@@ -6,6 +12,11 @@ So, one can fill up the form not only for oneself, but also for parents and chil
 - [X] extend the memory model
 - [X] load selected profile to main webpage
 - [X] add one more nationality
+# Source Files
+options.html calls options.js to persist user data into chrome storage.
+
+contents.js populates the form by matching element id with values found in storage, when the browser loads MDAC form url.
+
 # Use Chrome Extension to update MDAC
 Enter in Chrome address bar `chrome://extensions/`
 

@@ -170,7 +170,7 @@ const saveOptions = () => {
 };
 
 default_options=  {name: "Alan",
-passNo: "K12312321Z", dob: "01/01/1999", email: "abc@gmail.com", region: "+65", mobile: "91234343", passExpDte: "01/01/2030",
+passNo: "K12312321Z", dob: "01/01/1999", email: "abc@gmail.com", region: "65", mobile: "91234343", passExpDte: "01/01/2030",
 sex: "MALE",
 nationality: "SINGAPORE",
 trvlMode: "LAND",
