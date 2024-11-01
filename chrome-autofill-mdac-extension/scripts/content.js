@@ -9,7 +9,7 @@ const formData = {
 const restoreOptions = () => {
   chrome.storage.sync.get(formData, (items) => {
 	console.log("items", items);
-    console.log("Selected item", items[selectedProfile]);
+    console.log("Selected item", items[items.selectedProfile]);
     console.log("selected profile", items.selectedProfile);
     var selectedProfile = items.selectedProfile;
     console.log("name", items[selectedProfile].name);
@@ -23,10 +23,10 @@ const restoreOptions = () => {
     document.getElementById('confirmEmail').value = items[selectedProfile].email;
     document.getElementById('passExpDte').value = items[selectedProfile].passExpDte;
 
+	// catch error by trying some code
+	
 	document.getElementById('region').value = items[selectedProfile].region;
-    document.getElementById('confirmRegion').value = items[selectedProfile].region;
     document.getElementById('mobile').value = items[selectedProfile].mobile;
-    document.getElementById('confirmMobile').value = items[selectedProfile].mobile;
     
    
     document.getElementById('trvlMode').selectedIndex = items[selectedProfile].trvlMode;
