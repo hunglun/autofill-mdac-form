@@ -8,26 +8,31 @@ const formData = {
 
 const restoreOptions = () => {
   chrome.storage.sync.get(formData, (items) => {
-    console.log("items", items);
+	console.log("items", items);
+    console.log("Selected item", items[selectedProfile]);
     console.log("selected profile", items.selectedProfile);
     var selectedProfile = items.selectedProfile;
     console.log("name", items[selectedProfile].name);
+	console.log("nationality", items[selectedProfile].nationality);
     document.getElementById('name').value = items[selectedProfile].name; //items[selectedProfile].name;
-    document.getElementById('passNo').value = items[selectedProfile].passNo;
+	document.getElementById('sex').value = items[selectedProfile].sex;
+	document.getElementById('nationality').value = items[selectedProfile].nationality;
+	document.getElementById('passNo').value = items[selectedProfile].passNo;
     document.getElementById('dob').value = items[selectedProfile].dob;
     document.getElementById('email').value = items[selectedProfile].email;
     document.getElementById('confirmEmail').value = items[selectedProfile].email;
-    document.getElementById('region').value = items[selectedProfile].region;
+    document.getElementById('passExpDte').value = items[selectedProfile].passExpDte;
+
+	document.getElementById('region').value = items[selectedProfile].region;
     document.getElementById('confirmRegion').value = items[selectedProfile].region;
     document.getElementById('mobile').value = items[selectedProfile].mobile;
     document.getElementById('confirmMobile').value = items[selectedProfile].mobile;
-    document.getElementById('passExpDte').value = items[selectedProfile].passExpDte;
-    document.getElementById('sex').value = items[selectedProfile].sex;
-    document.getElementById('nationality').selectedIndex = items[selectedProfile].nationality;
+    
+   
     document.getElementById('trvlMode').selectedIndex = items[selectedProfile].trvlMode;
     document.getElementById("accommodationStay").selectedIndex = items[selectedProfile].accommodationStay;
     document.getElementById("accommodationAddress1").value = items[selectedProfile].accommodationAddress1;
-    document.getElementById("embark").selectedIndex = items[selectedProfile].embark;
+    document.getElementById("embark").value = items[selectedProfile].embark;
     document.getElementById("vesselNm").value = "NA";
 
 

@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Autofill MDAC",
     "description": "Autofill Malaysia Digital Arrival Card",
-    "version": "2.1",
+    "version": "2.2.2",
     "content_scripts": [
         {
             "matches": [
