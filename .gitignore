@@ -1,2 +1,6 @@
 .env
 .DS_Store
+
+# MDAC autofill bookmarklet
+bookmarklet/profile.json
+bookmarklet/dist/

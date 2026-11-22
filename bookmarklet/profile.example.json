@@ -1,0 +1,19 @@
+{
+  "name": "Alan",
+  "sex": "MALE",
+  "nationality": "SINGAPORE",
+  "pob": "SINGAPORE",
+  "passNo": "K12312321Z",
+  "dob": "01/01/1999",
+  "passExpDte": "01/01/2030",
+  "email": "abc@gmail.com",
+  "region": "65",
+  "mobile": "91234343",
+  "trvlMode": "LAND",
+  "accommodationStay": "OTHERS",
+  "accommodationAddress1": "1 Medini #01-01",
+  "accommodationState": "JOHOR",
+  "accommodationCity": "JOHOR",
+  "accommodationPostcode": "00000",
+  "embark": "SINGAPORE"
+}
